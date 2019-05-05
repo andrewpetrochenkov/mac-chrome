@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    cat <<EOF 1>&2
+usage: $(basename $0) command [args]
+
+Available commands:
+    open                    open urls
+    refresh                 refresh active tab or tabs by url
+    close                   close tab
+
+    url                     active tab url
+    urls                    list of urls
+
+    fullscreen-detect       return true/false if fullscreen active
+    fullscreen-enter        enter fullscreen
+    fullscreen-exit         exit fullscreen
+
+    audio                   list tabs with active audio
+
+    kill                    kill Chrome Google.app process
+    pid                     Chrome Google.app pid
+
+run \`$(basename $0) COMMAND --help\` for more infos
+EOF
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $OSTYPE != *"darwin"* ]] && echo "OS X only" && exit
+
+# path/to/bin/.google-chrome-command
+# path/to/bin/google-chrome
+
+[[ $# == 0 ]] && usage "$@"
+
+"${BASH_SOURCE[0]%/*}"/"${BASH_SOURCE[0]##*/}"-"$1" "${@:2}"

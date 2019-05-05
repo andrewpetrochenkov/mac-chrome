@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0) url" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+# Google Chrome.app/Contents/MacOS/Google Chrome
+
+ps -ax | grep -v grep | grep "Google Chrome.app" | head -1 | awk '{print $1}'

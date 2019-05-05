@@ -1,0 +1,32 @@
+{
+  "name": "mac-chrome",
+  "version": "2019.3.22",
+  "description": "macOS Google Chrome.app scripts",
+  "keywords": [
+    "google",
+    "chrome"
+  ],
+  "homepage": "https://github.com/looking-for-a-job/mac-chrome",
+  "license": "Unlicense",
+  "bin": {
+    ".-chrome-url.applescript": "./scripts/.-chrome-url.applescript",
+    ".chrome-close.applescript": "./scripts/.chrome-close.applescript",
+    ".chrome-fullscreen-detect.applescript": "./scripts/.chrome-fullscreen-detect.applescript",
+    ".chrome-fullscreen-enter.applescript": "./scripts/.chrome-fullscreen-enter.applescript",
+    ".chrome-fullscreen-exit.applescript": "./scripts/.chrome-fullscreen-exit.applescript",
+    ".chrome-open.applescript": "./scripts/.chrome-open.applescript",
+    ".chrome-refresh.applescript": "./scripts/.chrome-refresh.applescript",
+    ".chrome-urls.applescript": "./scripts/.chrome-urls.applescript",
+    "chrome": "./scripts/chrome",
+    "chrome-close": "./scripts/chrome-close",
+    "chrome-fullscreen-detect": "./scripts/chrome-fullscreen-detect",
+    "chrome-fullscreen-enter": "./scripts/chrome-fullscreen-enter",
+    "chrome-fullscreen-exit": "./scripts/chrome-fullscreen-exit",
+    "chrome-kill": "./scripts/chrome-kill",
+    "chrome-open": "./scripts/chrome-open",
+    "chrome-pid": "./scripts/chrome-pid",
+    "chrome-refresh": "./scripts/chrome-refresh",
+    "chrome-url": "./scripts/chrome-url",
+    "chrome-urls": "./scripts/chrome-urls"
+  }
+}
