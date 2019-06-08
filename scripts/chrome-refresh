@@ -2,10 +2,12 @@
 { set +x; } 2>/dev/null
 
 usage() {
-    echo "usage: $(basename $0) [url ...]" 1>&2
+    echo "usage: $(basename $0) url ..." 1>&2
     [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
 }
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-osascript "${BASH_SOURCE[0]}".applescript "$@"
+[[ $# == 0 ]] && usage "$@"
+
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"

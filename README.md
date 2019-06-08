@@ -26,9 +26,10 @@ command|`usage`
 `chrome-fullscreen-enter` |`usage: chrome-fullscreen-enter`
 `chrome-fullscreen-exit` |`usage: chrome-fullscreen-exit`
 `chrome-kill` |`usage: chrome-kill`
-`chrome-open` |`usage: chrome-open url`
-`chrome-pid` |`usage: chrome-pid url`
-`chrome-refresh` |`usage: chrome-refresh [url ...]`
+`chrome-noisy-tabs` |`usage: chrome-noisy-tabs`
+`chrome-open` |`usage: chrome-open url ...`
+`chrome-pid` |`usage: chrome-pid`
+`chrome-refresh` |`usage: chrome-refresh url ...`
 `chrome-url` |`usage: chrome-url`
 `chrome-urls` |`usage: chrome-urls`
 

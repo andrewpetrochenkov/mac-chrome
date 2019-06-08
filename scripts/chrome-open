@@ -2,39 +2,14 @@
 { set +x; } 2>/dev/null
 
 usage() {
-    echo "usage: $(basename $0) url" 1>&2
+    echo "usage: $(basename $0) url ..." 1>&2
     [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
 }
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
+[[ $# == 0 ]] && usage "$@"
+
 # open/refresh url and make tab active
 
-frontmost=true
-refresh=true
-
-while [[ $# != 0 ]]; do
-  url="$1"
-  shift
-  osascript <<EOF
-  tell application "Google Chrome"
-    repeat with w in  every window
-    set tab_i to 0
-      repeat with t in every tab in w
-        set tab_i to (tab_i+1)
-          if (URL of t) is "$url" then
-            if $refresh = true then
-              tell t to reload
-            end if
-            if $frontmost = true then
-              set index of w to 1 --activate window
-              tell w to set active tab index to tab_i --activate tab
-            end if
-            return
-          end if
-        end repeat
-    end repeat
-    open location "$url"
-  end tell
-EOF
-done;:
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"

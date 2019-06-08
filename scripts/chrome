@@ -31,9 +31,6 @@ EOF
 
 [[ $OSTYPE != *"darwin"* ]] && echo "OS X only" && exit
 
-# path/to/bin/.google-chrome-command
-# path/to/bin/google-chrome
-
 [[ $# == 0 ]] && usage "$@"
 
 "${BASH_SOURCE[0]%/*}"/"${BASH_SOURCE[0]##*/}"-"$1" "${@:2}"

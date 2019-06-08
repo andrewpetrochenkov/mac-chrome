@@ -2,13 +2,14 @@
 { set +x; } 2>/dev/null
 
 usage() {
-    echo "usage: $(basename $0)" 1>&2
+    echo "usage: $(basename $0)"
     [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
 }
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-pid="$(chrome pid)" || exit
+
+pid="$(ps -ax | grep -v grep | grep "Google Chrome.app" | head -1 | awk '{print $1}')"
 [[ -z "$pid" ]] && exit
 
 osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@" 2>&1

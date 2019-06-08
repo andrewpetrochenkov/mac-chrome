@@ -7,6 +7,10 @@ on run argv
             set {x,y,width, height} to bounds of front window
             set fullscreen to x is 0 and y is 0
         end if
-        return fullscreen
+        if fullscreen then
+            return 1
+        else
+            return 0
+        end if
     end tell
 end run

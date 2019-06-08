@@ -8,8 +8,10 @@ usage() {
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-pid="$(google-chrome pid)" || exit
+[[ $# != 0 ]] && usage "$@"
+
+pid="$(chrome pid)" || exit
 [[ -z "$pid" ]] && exit
 
-osascript "${BASH_SOURCE[0]}".applescript "$@" 2>&1
+osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"
 

@@ -8,10 +8,12 @@ usage() {
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-pid="$(google-chrome pid)" || exit
+[[ $# != 0 ]] && usage "$@"
+
+pid="$(chrome pid)" || exit
 [[ -z "$pid" ]] && exit
 
-fullscreen="$(google-chrome fullscreen-detect)" || exit
+fullscreen="$(chrome fullscreen-detect)" || exit
 [[ "$fullscreen" == false ]] && exit
 
 osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"
