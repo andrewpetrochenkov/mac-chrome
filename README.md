@@ -34,18 +34,27 @@ command|`usage`
 `chrome-urls` |`usage: chrome-urls`
 
 #### Examples
-```bash
-$ chrome open "https://github.com/" "https://google.com/"
-```
-
-```bash
-$ chrome refresh "https://github.com/"
-```
-
+url(s)
 ```bash
 $ chrome urls
 https://github.com/
 https://google.com/
+$ chrome url
+https://github.com/
+```
+
+open/refresh
+```bash
+$ chrome open "https://github.com/" "https://google.com/"
+$ chrome refresh "https://github.com/"
+```
+
+fullscreen
+```bash
+$ chrome fullscreen-enter
+$ chrome fullscreen-detect
+1
+$ chrome fullscreen-exit
 ```
 
 <p align="center">
