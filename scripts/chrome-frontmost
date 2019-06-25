@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# print 1 if 'Google Chrome.app' is in fullscreen mode, else 0
+# print 1 if 'Google Chrome.app' is frontmost, else 0
 
 usage() {
     echo "usage: $(basename $0)" 1>&2
@@ -11,8 +11,6 @@ usage() {
 
 [[ $# != 0 ]] && usage "$@"
 
-pid="$(chrome pid)" || exit
-[[ -z "$pid" ]] && exit
-
-osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"
-
+set "com.google.Chrome"
+front="$(/usr/bin/lsappinfo front)" || exit
+/usr/bin/lsappinfo info -only bundleID "$front" | grep -iq "$1" && echo 1 || echo 0

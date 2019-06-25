@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-{ set +x; } 2>/dev/null
+#
+# kill 'Google Chrome.app' process
 
 usage() {
     echo "usage: $(basename $0)" 1>&2

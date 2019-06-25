@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-{ set +x; } 2>/dev/null
+#
+# open url(s)
 
 usage() {
     echo "usage: $(basename $0) url ..." 1>&2

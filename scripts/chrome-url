@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-{ set +x; } 2>/dev/null
+#
+# print active url
 
 usage() {
     echo "usage: $(basename $0)" 1>&2

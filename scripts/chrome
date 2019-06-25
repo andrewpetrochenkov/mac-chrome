@@ -17,7 +17,9 @@ Available commands:
     fullscreen-enter        enter fullscreen
     fullscreen-exit         exit fullscreen
 
-    audio                   list tabs with active audio
+    frontmost               print 1 if 'Google Chrome.app' is frontmost, else 0
+
+    noisy-tabs              list tabs with active audio
 
     kill                    kill Chrome Google.app process
     pid                     Chrome Google.app pid

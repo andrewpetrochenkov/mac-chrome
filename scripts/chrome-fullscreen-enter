@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-{ set +x; } 2>/dev/null
+#
+# enter fullscreen mode
 
 usage() {
     echo "usage: $(basename $0)" 1>&2
@@ -14,6 +15,6 @@ pid="$(chrome pid)" || exit
 [[ -z "$pid" ]] && exit
 
 fullscreen="$(chrome fullscreen-detect)" || exit
-[[ "$fullscreen" == true ]] && exit
+[[ "$fullscreen" == 1 ]] && exit
 
 osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@"

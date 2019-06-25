@@ -21,17 +21,18 @@ $ [sudo] pip install mac-chrome
 command|`usage`
 -|-
 `chrome` |`usage: chrome command [args]`
-`chrome-close` |`usage: chrome-close url ...`
-`chrome-fullscreen-detect` |`usage: chrome-fullscreen-detect`
-`chrome-fullscreen-enter` |`usage: chrome-fullscreen-enter`
-`chrome-fullscreen-exit` |`usage: chrome-fullscreen-exit`
-`chrome-kill` |`usage: chrome-kill`
-`chrome-noisy-tabs` |`usage: chrome-noisy-tabs`
-`chrome-open` |`usage: chrome-open url ...`
-`chrome-pid` |`usage: chrome-pid`
-`chrome-refresh` |`usage: chrome-refresh url ...`
-`chrome-url` |`usage: chrome-url`
-`chrome-urls` |`usage: chrome-urls`
+[`chrome-close`](# "close tab by url") |`usage: chrome-close url ...`
+[`chrome-frontmost`](# "print 1 if 'Google Chrome.app' is frontmost, else 0") |`usage: chrome-frontmost`
+[`chrome-fullscreen-detect`](# "print 1 if 'Google Chrome.app' is in fullscreen mode, else 0") |`usage: chrome-fullscreen-detect`
+[`chrome-fullscreen-enter`](# "enter fullscreen mode") |`usage: chrome-fullscreen-enter`
+[`chrome-fullscreen-exit`](# "exit fullscreen mode") |`usage: chrome-fullscreen-exit`
+[`chrome-kill`](# "kill 'Google Chrome.app' process") |`usage: chrome-kill`
+[`chrome-noisy-tabs`](# "list tabs with playing audio") |`usage: chrome-noisy-tabs`
+[`chrome-open`](# "open url(s)") |`usage: chrome-open url ...`
+[`chrome-pid`](# "print 'Google Chrome.app' pid") |`usage: chrome-pid`
+[`chrome-refresh`](# "refresh url(s)") |`usage: chrome-refresh url ...`
+[`chrome-url`](# "print active url") |`usage: chrome-url`
+[`chrome-urls`](# "print urls") |`usage: chrome-urls`
 
 #### Examples
 url(s)
@@ -55,6 +56,12 @@ $ chrome fullscreen-enter
 $ chrome fullscreen-detect
 1
 $ chrome fullscreen-exit
+```
+
+frontmost (`1` or `0`)
+```bash
+$ chrome frontmost
+0
 ```
 
 <p align="center">
