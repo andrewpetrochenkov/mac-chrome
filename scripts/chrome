@@ -18,11 +18,13 @@ Available commands:
     fullscreen-exit         exit fullscreen
 
     frontmost               print 1 if 'Google Chrome.app' is frontmost, else 0
+    ok                      print 1 if 'Google Chrome.app' is active and ok, else 0
 
     noisy-tabs              list tabs with active audio
 
     kill                    kill Chrome Google.app process
     pid                     Chrome Google.app pid
+    ready                   print 1 if Google Chrome is ready, else 0
 
 run \`$(basename $0) COMMAND --help\` for more infos
 EOF

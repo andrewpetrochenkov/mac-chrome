@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#
+# print 1 if Google Chrome is active and ready, else 0
+
+usage() {
+    echo "usage: $(basename $0) timeout" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# != 1 ]] && usage "$@"
+
+pid="$(chrome-pid)" || exit
+[[ -z "$pid" ]] && echo 0 && exit
+
+out="$(osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@")" || exit
+[[ -z "$out" ]] && out=0; echo $out

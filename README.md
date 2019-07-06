@@ -30,6 +30,7 @@ command|`usage`
 [`chrome-noisy-tabs`](# "list tabs with playing audio") |`usage: chrome-noisy-tabs`
 [`chrome-open`](# "open url(s)") |`usage: chrome-open url ...`
 [`chrome-pid`](# "print 'Google Chrome.app' pid") |`usage: chrome-pid`
+[`chrome-ready`](# "print 1 if Google Chrome is active and ready, else 0") |`usage: chrome-ready timeout`
 [`chrome-refresh`](# "refresh url(s)") |`usage: chrome-refresh url ...`
 [`chrome-url`](# "print active url") |`usage: chrome-url`
 [`chrome-urls`](# "print urls") |`usage: chrome-urls`
@@ -62,6 +63,15 @@ frontmost (`1` or `0`)
 ```bash
 $ chrome frontmost
 0
+```
+
+`Google Chrome.app` process
+```bash
+$ chrome pid
+42
+$ chrome ready 5 # timeout 5 seconds
+1
+$ chrome kill
 ```
 
 <p align="center">

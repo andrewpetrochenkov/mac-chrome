@@ -9,7 +9,7 @@ usage() {
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-pid="$(chrome pid)" || exit
+pid="$(chrome-pid)" || exit
 [[ -z "$pid" ]] && exit
 
 osascript "${BASH_SOURCE[0]%/*}"/."${BASH_SOURCE[0]##*/}".applescript "$@" 2>&1

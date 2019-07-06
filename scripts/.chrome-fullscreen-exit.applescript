@@ -1,16 +1,19 @@
 #!/usr/bin/osascript
 
+property _TIMEOUT_APP: 10
+
 try
-  tell application "Google Chrome"
-    activate
-    delay 0.5 -- delay REQUIRED
-    tell application "System Events"
-      keystroke "f" using {command down, control down}
+  with timeout of _TIMEOUT_APP seconds
+    tell application "Google Chrome"
+      activate
+      delay 0.5 -- delay REQUIRED
+      tell application "System Events"
+        keystroke "f" using {command down, control down}
+      end tell
     end tell
-  end tell
+  end timeout
 on error errorMessage number errorNumber
-  if (errorNumber is equal to -609) --Google Chrome got an error: Connection is invalid
-    return
-  end if
+  --Connection is invalid. (-609)
+  if (errorNumber is in {-609}) then return
   error errorMessage number errorNumber
 end try

@@ -9,5 +9,5 @@ usage() {
 
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
-pid="$(chrome pid)" || exit
+pid="$(chrome-pid)" || exit
 [[ -n "$pid" ]] && { kill -9 "$pid" &> /dev/null; exit; };:
