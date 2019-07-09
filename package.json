@@ -1,6 +1,6 @@
 {
   "name": "mac-chrome",
-  "version": "2019.7.6",
+  "version": "2019.7.9",
   "description": "macOS Google Chrome.app scripts",
   "keywords": [
     "google",
@@ -13,6 +13,7 @@
     ".chrome-fullscreen-detect.applescript": "./scripts/.chrome-fullscreen-detect.applescript",
     ".chrome-fullscreen-enter.applescript": "./scripts/.chrome-fullscreen-enter.applescript",
     ".chrome-fullscreen-exit.applescript": "./scripts/.chrome-fullscreen-exit.applescript",
+    ".chrome-isready.applescript": "./scripts/.chrome-isready.applescript",
     ".chrome-noisy-tabs.applescript": "./scripts/.chrome-noisy-tabs.applescript",
     ".chrome-open.applescript": "./scripts/.chrome-open.applescript",
     ".chrome-refresh.applescript": "./scripts/.chrome-refresh.applescript",
@@ -20,9 +21,11 @@
     ".chrome-urls.applescript": "./scripts/.chrome-urls.applescript",
     "chrome": "./scripts/chrome",
     "chrome-close": "./scripts/chrome-close",
+    "chrome-frontmost": "./scripts/chrome-frontmost",
     "chrome-fullscreen-detect": "./scripts/chrome-fullscreen-detect",
     "chrome-fullscreen-enter": "./scripts/chrome-fullscreen-enter",
     "chrome-fullscreen-exit": "./scripts/chrome-fullscreen-exit",
+    "chrome-isready": "./scripts/chrome-isready",
     "chrome-kill": "./scripts/chrome-kill",
     "chrome-noisy-tabs": "./scripts/chrome-noisy-tabs",
     "chrome-open": "./scripts/chrome-open",

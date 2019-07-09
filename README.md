@@ -26,11 +26,11 @@ command|`usage`
 [`chrome-fullscreen-detect`](# "print 1 if 'Google Chrome.app' is in fullscreen mode, else 0") |`usage: chrome-fullscreen-detect`
 [`chrome-fullscreen-enter`](# "enter fullscreen mode") |`usage: chrome-fullscreen-enter`
 [`chrome-fullscreen-exit`](# "exit fullscreen mode") |`usage: chrome-fullscreen-exit`
+[`chrome-isready`](# "print 1 if Google Chrome is active and ready, else 0") |`usage: chrome-isready timeout`
 [`chrome-kill`](# "kill 'Google Chrome.app' process") |`usage: chrome-kill`
 [`chrome-noisy-tabs`](# "list tabs with playing audio") |`usage: chrome-noisy-tabs`
 [`chrome-open`](# "open url(s)") |`usage: chrome-open url ...`
 [`chrome-pid`](# "print 'Google Chrome.app' pid") |`usage: chrome-pid`
-[`chrome-ready`](# "print 1 if Google Chrome is active and ready, else 0") |`usage: chrome-ready timeout`
 [`chrome-refresh`](# "refresh url(s)") |`usage: chrome-refresh url ...`
 [`chrome-url`](# "print active url") |`usage: chrome-url`
 [`chrome-urls`](# "print urls") |`usage: chrome-urls`
@@ -69,7 +69,7 @@ $ chrome frontmost
 ```bash
 $ chrome pid
 42
-$ chrome ready 5 # timeout 5 seconds
+$ chrome isready 5 # timeout 5 seconds
 1
 $ chrome kill
 ```

@@ -10,9 +10,11 @@ try
         repeat with t in every tab of w
           with timeout of _TIMEOUT_TAB seconds
             tell t
-              set is_playing to execute javascript "!!Array.prototype.find.call(document.querySelectorAll('audio,video'),function(elem){return elem.duration > 0 && !elem.paused})"
-              if is_playing is true then
-                  log (get url of t)
+              if loading of t is false then
+                set is_playing to execute javascript "!!Array.prototype.find.call(document.querySelectorAll('audio,video'),function(elem){return elem.duration > 0 && !elem.paused})"
+                if is_playing is true then
+                    log (get url of t)
+                end if
               end if
             end tell
           end timeout
