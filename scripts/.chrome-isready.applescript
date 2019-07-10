@@ -2,8 +2,8 @@
 
 on run argv
   try
-    set _TIMEOUT_APP to (item 1 of argv)
-    with timeout of _TIMEOUT_APP seconds
+    set _APP_TIMEOUT to (item 1 of argv)
+    with timeout of _APP_TIMEOUT seconds
       tell application "Google Chrome"
         repeat with w in  every window
           repeat with t in every tab in w

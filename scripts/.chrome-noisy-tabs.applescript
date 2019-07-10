@@ -1,23 +1,23 @@
 #!/usr/bin/osascript
 
-property _TIMEOUT_APP: 10
-property _TIMEOUT_TAB: 5
-
 try
-  with timeout of _TIMEOUT_APP seconds
+  set _APP_TIMEOUT to 5
+  if ("CHROME_TIMEOUT" is in system attribute) then
+    set _APP_TIMEOUT to (system attribute "CHROME_TIMEOUT") as integer
+  end if
+
+  with timeout of _APP_TIMEOUT seconds
     tell application "Google Chrome"
       repeat with w in every window
         repeat with t in every tab of w
-          with timeout of _TIMEOUT_TAB seconds
-            tell t
-              if loading of t is false then
-                set is_playing to execute javascript "!!Array.prototype.find.call(document.querySelectorAll('audio,video'),function(elem){return elem.duration > 0 && !elem.paused})"
-                if is_playing is true then
-                    log (get url of t)
-                end if
+          tell t
+            if loading of t is false then
+              set is_playing to execute javascript "!!Array.prototype.find.call(document.querySelectorAll('audio,video'),function(elem){return elem.duration > 0 && !elem.paused})"
+              if is_playing is true then
+                  log (get url of t)
               end if
-            end tell
-          end timeout
+            end if
+          end tell
         end repeat
       end repeat
     end tell

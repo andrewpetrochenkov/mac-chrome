@@ -13,18 +13,17 @@ Available commands:
     url                     active tab url
     urls                    list of urls
 
-    fullscreen-detect       return true/false if fullscreen active
+    fullscreen-detect       print 1 if fullscreen active, else 0
     fullscreen-enter        enter fullscreen
     fullscreen-exit         exit fullscreen
 
     frontmost               print 1 if 'Google Chrome.app' is frontmost, else 0
-    ok                      print 1 if 'Google Chrome.app' is active and ok, else 0
 
     noisy-tabs              list tabs with active audio
 
+    isready                 print 1 if Google Chrome is ready, else 0
     kill                    kill Chrome Google.app process
     pid                     Chrome Google.app pid
-    ready                   print 1 if Google Chrome is ready, else 0
 
 run \`$(basename $0) COMMAND --help\` for more infos
 EOF

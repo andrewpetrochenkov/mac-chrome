@@ -1,10 +1,13 @@
 #!/usr/bin/osascript
 
-property _TIMEOUT_APP: 5
-
 on run argv
   try
-    with timeout of _TIMEOUT_APP seconds
+    set _APP_TIMEOUT to 5
+    if ("CHROME_TIMEOUT" is in system attribute) then
+      set _APP_TIMEOUT to (system attribute "CHROME_TIMEOUT") as integer
+    end if
+
+    with timeout of _APP_TIMEOUT seconds
       tell application "Google Chrome"
         repeat with _arg_url in argv
           repeat with w in every window
@@ -12,15 +15,13 @@ on run argv
               set _tabs_count to (count tabs of w)
               set i to 1
               repeat until (i > _tabs_count)
-                with timeout of 2 seconds
-                  set _tab_url to (URL of (tab i of w)) as text
-                  if (_tab_url as text is _arg_url as text) then
-                    tell (tab i of w) to close
-                    set _tabs_count to _tabs_count - 1
-                  else
-                    set i to i + 1
-                  end if
-                end timeout
+                set _tab_url to (URL of (tab i of w)) as text
+                if (_tab_url as text is _arg_url as text) then
+                  tell (tab i of w) to close
+                  set _tabs_count to _tabs_count - 1
+                else
+                  set i to i + 1
+                end if
               end repeat
             on error errorMessage number errorNumber
               --Invalid index. (-1719)

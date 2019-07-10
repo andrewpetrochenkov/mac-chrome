@@ -17,6 +17,11 @@ $ [sudo] npm i -g mac-chrome
 $ [sudo] pip install mac-chrome
 ```
 
+#### Config
+```bash
+$ export CHROME_TIMEOUT=10 # 5 by default
+```
+
 #### Scripts usage
 command|`usage`
 -|-

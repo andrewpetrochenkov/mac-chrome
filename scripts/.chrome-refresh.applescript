@@ -1,18 +1,19 @@
 #!/usr/bin/osascript
 
-property _TIMEOUT_APP: 5
-
 on run argv
   try
-    with timeout of _TIMEOUT_APP seconds
+    set _APP_TIMEOUT to 5
+    if ("CHROME_TIMEOUT" is in system attribute) then
+      set _APP_TIMEOUT to (system attribute "CHROME_TIMEOUT") as integer
+    end if
+
+    with timeout of _APP_TIMEOUT seconds
       repeat with _url in argv
         tell application "Google Chrome"
           repeat with w in every window
             repeat with t in every tab in w
               if _url is in (URL of t as text) then
-                with timeout of 3 seconds
-                  tell t to reload
-                end timeout
+                tell t to reload
               end if
             end repeat
           end repeat

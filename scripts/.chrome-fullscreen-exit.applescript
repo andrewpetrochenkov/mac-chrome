@@ -1,9 +1,12 @@
 #!/usr/bin/osascript
 
-property _TIMEOUT_APP: 10
-
 try
-  with timeout of _TIMEOUT_APP seconds
+  set _APP_TIMEOUT to 5
+  if ("CHROME_TIMEOUT" is in system attribute) then
+    set _APP_TIMEOUT to (system attribute "CHROME_TIMEOUT") as integer
+  end if
+
+  with timeout of _APP_TIMEOUT seconds
     tell application "Google Chrome"
       activate
       delay 0.5 -- delay REQUIRED
