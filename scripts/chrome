@@ -27,10 +27,10 @@ Available commands:
 
 run \`$(basename $0) COMMAND --help\` for more infos
 EOF
-    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+    [ "$1" = "-h" ] || [ "$1" = "--help" ]; exit
 }
 
-[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+[ "$1" = "-h" ] || [ "$1" = "--help" ] && usage "$@"
 
 [[ $OSTYPE != *"darwin"* ]] && echo "OS X only" && exit
 
